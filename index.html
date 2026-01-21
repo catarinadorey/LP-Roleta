@@ -313,25 +313,49 @@ function spin() {
     isSpinning = true;
 
     const duration = 5000;
-    const start = performance.now();
-    const totalRotation = (10 + Math.random()*5) * Math.PI*2;
+    const startTime = performance.now();
+    
+    // Rotação extra para garantir várias voltas + um ângulo aleatório
+    const extraRotation = (Math.random() * Math.PI * 2);
+    const totalRotationToEffect = (10 * Math.PI * 2) + extraRotation;
+    
+    // Guardamos onde a roleta já estava para começar de onde parou
+    const initialAngle = startAngle;
 
-    function animate(time){
-        const progress = Math.min((time-start)/duration,1);
-        const ease = 1 - Math.pow(1-progress,4);
-        startAngle = ease * totalRotation;
+    function animate(currentTime){
+        const progress = Math.min((currentTime - startTime) / duration, 1);
+        
+        // Ease out quartic para suavizar o final
+        const ease = 1 - Math.pow(1 - progress, 4);
+        
+        // Atualiza o ângulo global
+        startAngle = initialAngle + (ease * totalRotationToEffect);
+        
         drawWheel();
 
-        if(progress < 1) requestAnimationFrame(animate);
-        else {
+        if(progress < 1) {
+            requestAnimationFrame(animate);
+        } else {
             isSpinning = false;
 
-            const degrees = (startAngle * 180/Math.PI) % 360;
-            const index = Math.floor(
-                (360 - (degrees + 270)%360) / (360/brands.length)
-            );
-            const winner = brands[index<0 ? index+brands.length : index];
+            // CÁLCULO DO VENCEDOR:
+            // 1. Normaliza o ângulo para ficar entre 0 e 2PI
+            const normalizedAngle = startAngle % (Math.PI * 2);
+            
+            // 2. A seta está no topo (1.5 * PI ou 270°). 
+            // Precisamos saber qual fatia cruza essa linha.
+            const sliceWidth = (Math.PI * 2) / brands.length;
+            
+            // A lógica é: (Posição da Seta - Rotação da Roleta)
+            let winningIndex = Math.floor((1.5 * Math.PI - normalizedAngle) / sliceWidth);
+            
+            // Ajusta se o índice for negativo
+            while (winningIndex < 0) winningIndex += brands.length;
+            winningIndex = winningIndex % brands.length;
 
+            const winner = brands[winningIndex];
+
+            // Exibe o Modal
             document.getElementById("winner-name").innerText = winner.name;
             document.getElementById("winner-offer").innerText = winner.offer;
             document.getElementById("winner-link").href = winner.url;
