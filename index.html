@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pickswise | Ofertas Recomendadas</title>
+<title>Pickswise | Casino Offers</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@400;900&display=swap');
@@ -198,14 +198,14 @@ h1 {
 
 <body>
 
-<h1>Ofertas de Casas de Apostas<br>Recomendadas pela Pickswise</h1>
+<h1>Pickswise Exclusive<br>Casino Offers</h1>
 
 <div class="outer-rim">
     <div class="lights-frame"></div>
     <div class="arrow"></div>
     <div class="center-hub">
-        <span>Oferta</span>
-        <strong>Top</strong>
+        <span>Get up to</span>
+        <strong>$1000</strong>
     </div>
     <div class="wheel-container">
         <canvas id="wheel"></canvas>
@@ -213,11 +213,11 @@ h1 {
 </div>
 
 <div class="timer-box">
-    <div class="timer-label">Oferta termina em:</div>
+    <div class="timer-label">Offer Ends in:</div>
     <div id="countdown">03:12:45</div>
 </div>
 
-<button class="btn-main" onclick="spin()">Ver Oferta</button>
+<button class="btn-main" onclick="spin()">Get Offer</button>
 
 <!-- MODAL DINÂMICO -->
 <div id="modal" class="modal">
@@ -228,7 +228,7 @@ h1 {
            href="#"
            target="_blank"
            class="claim-link">
-           REIVINDICAR AGORA
+           Get Offer Now
         </a>
     </div>
 </div>
@@ -236,14 +236,14 @@ h1 {
 <script>
 /* === MARCAS PICKSWISE === */
 const brands = [
-  { name:"CAESARS", color:"#16302b", offer:"Deposite e receba bónus exclusivo", url:"https://offers.pickswise.com/tyyw" },
-  { name:"BETMGM", color:"#000", offer:"Bónus até ao valor máximo permitido", url:"https://mediaserver.betmgmpartners.com/renderBanner.do?zoneId=1742008" },
-  { name:"BET365", color:"#127e5d", offer:"Oferta exclusiva para novos jogadores", url:"https://www.bet365.com" },
-  { name:"WSOP", color:"#7b1113", offer:"Bónus especial via Pickswise", url:"https://wlcaesarsinteractive.adsrv.eacdn.com" },
-  { name:"FANDUEL", color:"#1475e1", offer:"Oferta limitada para novos registos", url:"https://wlfanduelus.adsrv.eacdn.com" },
-  { name:"PLAYSTAR", color:"#2d1b4d", offer:"Bónus recomendado pela Pickswise", url:"https://click.trackplaystar.com" },
-  { name:"HARD ROCK", color:"#1a1a1a", offer:"Oferta exclusiva Hard Rock", url:"https://wlhardrock.adsrv.eacdn.com" },
-  { name:"FANATICS", color:"#c8102e", offer:"Oferta especial Fanatics", url:"https://track.fanaticsbettingpartners.com" }
+  { name:"CAESARS", color:"#16302b", offer:"Get $10 Sign-up Bonus + 100% deposit match up to $1K + 2500 Reward Credits® when you wager $25", url:"https://offers.pickswise.com/tyyw" },
+  { name:"BETMGM", color:"#000", offer:"Get a $1,000 Bonus with BetMGM Casino + $25 on the House!", url:"https://mediaserver.betmgmpartners.com/renderBanner.do?zoneId=1742008" },
+  { name:"BET365", color:"#127e5d", offer:"100% Deposit Match Bonus up to $1,000 + up to 500 Spins", url:"https://www.bet365.com/hub/en-us/open-account-offer-gaming?affiliate=365_03333889" },
+  { name:"WSOP", color:"#7b1113", offer:"Deposit $10, Get $40 in Bonus Dollars on Slots", url:"https://mediaserver.betmgmpartners.com/renderBanner.do?zoneId=1698587" },
+  { name:"FANDUEL", color:"#1475e1", offer:"Deposit $10, Get 500 Bonus Spins & $40 Casino Bonus", url:"https://wlfanduelus.adsrv.eacdn.com/C.ashx?btag=a_21532b_50c_&affid=11877&siteid=21532&adid=50&c=" },
+  { name:"PLAYSTAR", color:"#2d1b4d", offer:"100% Deposit Match up to $500 + up to 500 Free Spins", url:"https://click.trackplaystar.com/track/62436506-a2d2-4275-8d69-441854d193ca?type=seo&s1=freebets" },
+  { name:"HARD ROCK", color:"#1a1a1a", offer:"Deposit $10+ and Get 200 Bonus Spins + up to $1,000 Lossback", url:"https://wlhardrock.adsrv.eacdn.com/C.ashx?btag=a_1832b_258c_&affid=201&siteid=1832&adid=258&c=" },
+  { name:"FANATICS", color:"#c8102e", offer:"Get up to $1,000 Free Spins on Cash Eruption", url:"https://track.fanaticsbettingpartners.com/track/6c270394-cbf7-4c98-a6f2-10334c1afd85?type=native&s1=BonusBets" }
 ];
 
 const canvas = document.getElementById("wheel");
