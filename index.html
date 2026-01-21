@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Premium Casino Roulette</title>
+<title>Pickswise | Ofertas Recomendadas</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@400;900&display=swap');
@@ -13,13 +13,11 @@
     --btn-gradient: linear-gradient(180deg, #f9d976 0%, #f39c12 100%);
 }
 
-* {
-    box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
     background: #000;
-    background-image: 
+    background-image:
         radial-gradient(circle at center, rgba(184,134,11,.2) 0%, transparent 70%),
         url('https://www.transparenttextures.com/patterns/stardust.png');
     color: white;
@@ -38,28 +36,28 @@ h1 {
     font-family: 'Oswald', sans-serif;
     text-align: center;
     text-transform: uppercase;
-    font-size: clamp(1.5rem, 6vw, 2.2rem);
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
     margin-bottom: 20px;
     line-height: 1.1;
     background: var(--gold-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 10px rgba(212,175,55,.5));
 }
 
-/* Estrutura roleta */
+/* Roleta */
 .outer-rim {
     position: relative;
-    width: min(90vw, 420px);
+    width: 420px;
+    max-width: 90vw;
     aspect-ratio: 1 / 1;
     border-radius: 50%;
-    padding: 3.5%;
+    padding: 15px;
     background: #1a1a1a;
-    box-shadow: 0 0 50px rgba(0,0,0,1), 0 0 20px rgba(212,175,55,.4);
     border: 4px solid #333;
+    box-shadow: 0 0 50px rgba(0,0,0,1),
+                0 0 20px rgba(212,175,55,.4);
 }
 
-/* Luzes */
 .lights-frame {
     position: absolute;
     inset: 5px;
@@ -70,21 +68,13 @@ h1 {
 }
 
 .wheel-container {
+    position: relative;
     width: 100%;
     height: 100%;
     border-radius: 50%;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-canvas {
-    width: 100%;
-    height: 100%;
-}
-
-/* Seta */
 .arrow {
     position: absolute;
     top: -10px;
@@ -92,9 +82,9 @@ canvas {
     transform: translateX(-50%);
     width: 0;
     height: 0;
-    border-left: 18px solid transparent;
-    border-right: 18px solid transparent;
-    border-top: 32px solid #fff;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 35px solid #fff;
     filter: drop-shadow(0 0 5px gold);
     z-index: 30;
 }
@@ -102,10 +92,8 @@ canvas {
 /* Centro */
 .center-hub {
     position: absolute;
-    width: 25%;
-    height: 25%;
-    min-width: 70px;
-    min-height: 70px;
+    width: 100px;
+    height: 100px;
     background: radial-gradient(circle, #f9d976, #b8860b);
     border-radius: 50%;
     z-index: 25;
@@ -113,25 +101,26 @@ canvas {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 0 30px rgba(0,0,0,.8), inset 0 0 10px white;
+    box-shadow: 0 0 30px rgba(0,0,0,.8),
+                inset 0 0 10px white;
     border: 3px solid #000;
 }
 
 .center-hub span {
-    font-size: clamp(.55rem, 2vw, .7rem);
+    font-size: .7rem;
     font-weight: 900;
     color: #000;
     text-transform: uppercase;
 }
 
 .center-hub strong {
-    font-size: clamp(1rem, 4vw, 1.2rem);
+    font-size: 1.2rem;
     color: #000;
 }
 
 /* Timer */
 .timer-box {
-    margin-top: 20px;
+    margin-top: 25px;
     text-align: center;
 }
 
@@ -139,16 +128,15 @@ canvas {
     font-size: .8rem;
     color: #d4af37;
     letter-spacing: 2px;
-    margin-bottom: 5px;
 }
 
 #countdown {
     background: rgba(0,0,0,.8);
     border: 2px solid #333;
-    padding: 10px 25px;
+    padding: 10px 30px;
     border-radius: 10px;
     font-family: 'Oswald', sans-serif;
-    font-size: clamp(1.6rem, 6vw, 2.8rem);
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
     letter-spacing: 4px;
 }
 
@@ -165,7 +153,8 @@ canvas {
     font-weight: 900;
     text-transform: uppercase;
     cursor: pointer;
-    box-shadow: 0 6px 0 #8a6d3b, 0 10px 20px rgba(0,0,0,.5);
+    box-shadow: 0 6px 0 #8a6d3b,
+                0 10px 20px rgba(0,0,0,.5);
 }
 
 .btn-main:active {
@@ -196,27 +185,27 @@ canvas {
 
 .claim-link {
     display: block;
-    margin-top: 20px;
-    padding: 15px;
     background: var(--gold-gradient);
     color: #000;
+    padding: 15px;
+    margin-top: 20px;
+    text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
-    text-decoration: none;
 }
 </style>
 </head>
 
 <body>
 
-<h1>Roda a roleta e ganha<br>uma oferta exclusiva!</h1>
+<h1>Ofertas de Casas de Apostas<br>Recomendadas pela Pickswise</h1>
 
 <div class="outer-rim">
     <div class="lights-frame"></div>
     <div class="arrow"></div>
     <div class="center-hub">
-        <span>Bónus</span>
-        <strong>€100</strong>
+        <span>Oferta</span>
+        <strong>Top</strong>
     </div>
     <div class="wheel-container">
         <canvas id="wheel"></canvas>
@@ -228,26 +217,33 @@ canvas {
     <div id="countdown">03:12:45</div>
 </div>
 
-<button class="btn-main" onclick="spin()">Resgatar Oferta</button>
+<button class="btn-main" onclick="spin()">Ver Oferta</button>
 
+<!-- MODAL DINÂMICO -->
 <div id="modal" class="modal">
     <div class="modal-content">
-        <h2 id="winner-name" style="color:#d4af37">PARABÉNS!</h2>
-        <p id="winner-offer"></p>
-        <a id="winner-link" class="claim-link" target="_blank">REIVINDICAR AGORA</a>
+        <h2 id="winner-name" style="color:#d4af37"></h2>
+        <p id="winner-offer" style="font-size:1.2rem"></p>
+        <a id="winner-link"
+           href="#"
+           target="_blank"
+           class="claim-link">
+           REIVINDICAR AGORA
+        </a>
     </div>
 </div>
 
 <script>
+/* === MARCAS PICKSWISE === */
 const brands = [
-    { name: "CAESARS", color: "#16302b", offer: "Deposit 10$ earn 200$", url: "#" },
-    { name: "BETMGM", color: "#000", offer: "Deposit Match up to 1000$", url: "#" },
-    { name: "BET365", color: "#127e5d", offer: "Deposit Match up to 900$", url: "#" },
-    { name: "WSOP", color: "#7b1113", offer: "Deposit Match up to 800$", url: "#" },
-    { name: "FANDUEL", color: "#1475e1", offer: "Deposit Match up to 2000$", url: "#" },
-    { name: "PLAYSTAR", color: "#2d1b4d", offer: "Deposit Match up to 500$", url: "#" },
-    { name: "HARD ROCK", color: "#1a1a1a", offer: "Deposit Match up to 600$", url: "#" },
-    { name: "FANATICS", color: "#c8102e", offer: "Deposit Match up to 700$", url: "#" }
+  { name:"CAESARS", color:"#16302b", offer:"Deposite e receba bónus exclusivo", url:"https://offers.pickswise.com/tyyw" },
+  { name:"BETMGM", color:"#000", offer:"Bónus até ao valor máximo permitido", url:"https://mediaserver.betmgmpartners.com/renderBanner.do?zoneId=1742008" },
+  { name:"BET365", color:"#127e5d", offer:"Oferta exclusiva para novos jogadores", url:"https://www.bet365.com" },
+  { name:"WSOP", color:"#7b1113", offer:"Bónus especial via Pickswise", url:"https://wlcaesarsinteractive.adsrv.eacdn.com" },
+  { name:"FANDUEL", color:"#1475e1", offer:"Oferta limitada para novos registos", url:"https://wlfanduelus.adsrv.eacdn.com" },
+  { name:"PLAYSTAR", color:"#2d1b4d", offer:"Bónus recomendado pela Pickswise", url:"https://click.trackplaystar.com" },
+  { name:"HARD ROCK", color:"#1a1a1a", offer:"Oferta exclusiva Hard Rock", url:"https://wlhardrock.adsrv.eacdn.com" },
+  { name:"FANATICS", color:"#c8102e", offer:"Oferta especial Fanatics", url:"https://track.fanaticsbettingpartners.com" }
 ];
 
 const canvas = document.getElementById("wheel");
@@ -256,8 +252,9 @@ const arc = Math.PI / (brands.length / 2);
 let startAngle = 0;
 let isSpinning = false;
 
+/* Canvas resize CORRETO */
 function resizeCanvas() {
-    const size = document.querySelector(".wheel-container").offsetWidth;
+    const size = document.querySelector(".wheel-container").clientWidth;
     canvas.width = size;
     canvas.height = size;
     drawWheel();
@@ -266,10 +263,9 @@ function resizeCanvas() {
 function drawWheel() {
     const size = canvas.width;
     const center = size / 2;
+    ctx.clearRect(0,0,size,size);
 
-    ctx.clearRect(0, 0, size, size);
-
-    brands.forEach((brand, i) => {
+    brands.forEach((brand,i)=>{
         const angle = startAngle + i * arc;
         ctx.fillStyle = brand.color;
         ctx.beginPath();
@@ -283,47 +279,62 @@ function drawWheel() {
 
         ctx.save();
         ctx.translate(
-            center + Math.cos(angle + arc / 2) * center * 0.7,
-            center + Math.sin(angle + arc / 2) * center * 0.7
+            center + Math.cos(angle + arc/2) * center * .7,
+            center + Math.sin(angle + arc/2) * center * .7
         );
-        ctx.rotate(angle + arc / 2 + Math.PI / 2);
+        ctx.rotate(angle + arc/2 + Math.PI/2);
         ctx.fillStyle = "#fff";
-        ctx.font = `900 ${center * 0.07}px Roboto`;
-        ctx.fillText(brand.name, -ctx.measureText(brand.name).width / 2, 0);
+        ctx.font = `900 ${center * .07}px Roboto`;
+        ctx.fillText(
+            brand.name,
+            -ctx.measureText(brand.name).width/2,
+            0
+        );
         ctx.restore();
     });
 }
 
+/* Timer */
 function startTimer() {
-    let timer = 3 * 3600 + 12 * 60 + 45;
-    const display = document.getElementById("countdown");
-
-    setInterval(() => {
-        const h = String(Math.floor(timer / 3600)).padStart(2, "0");
-        const m = String(Math.floor((timer % 3600) / 60)).padStart(2, "0");
-        const s = String(timer % 60).padStart(2, "0");
-        display.textContent = `${h}:${m}:${s}`;
-        timer = timer > 0 ? timer - 1 : 3 * 3600 + 12 * 60 + 45;
-    }, 1000);
+    let t = 3*3600 + 12*60 + 45;
+    const d = document.getElementById("countdown");
+    setInterval(()=>{
+        const h = String(Math.floor(t/3600)).padStart(2,"0");
+        const m = String(Math.floor((t%3600)/60)).padStart(2,"0");
+        const s = String(t%60).padStart(2,"0");
+        d.textContent = `${h}:${m}:${s}`;
+        t = t>0 ? t-1 : 3*3600+12*60+45;
+    },1000);
 }
 
+/* Spin com popup dinâmico */
 function spin() {
-    if (isSpinning) return;
+    if(isSpinning) return;
     isSpinning = true;
 
     const duration = 5000;
     const start = performance.now();
-    const totalRotation = (10 + Math.random() * 5) * Math.PI * 2;
+    const totalRotation = (10 + Math.random()*5) * Math.PI*2;
 
-    function animate(time) {
-        const progress = Math.min((time - start) / duration, 1);
-        const ease = 1 - Math.pow(1 - progress, 4);
+    function animate(time){
+        const progress = Math.min((time-start)/duration,1);
+        const ease = 1 - Math.pow(1-progress,4);
         startAngle = ease * totalRotation;
         drawWheel();
 
-        if (progress < 1) requestAnimationFrame(animate);
+        if(progress < 1) requestAnimationFrame(animate);
         else {
             isSpinning = false;
+
+            const degrees = (startAngle * 180/Math.PI) % 360;
+            const index = Math.floor(
+                (360 - (degrees + 270)%360) / (360/brands.length)
+            );
+            const winner = brands[index<0 ? index+brands.length : index];
+
+            document.getElementById("winner-name").innerText = winner.name;
+            document.getElementById("winner-offer").innerText = winner.offer;
+            document.getElementById("winner-link").href = winner.url;
             document.getElementById("modal").style.display = "flex";
         }
     }
@@ -331,7 +342,7 @@ function spin() {
 }
 
 window.addEventListener("resize", resizeCanvas);
-window.onload = () => {
+window.onload = ()=>{
     resizeCanvas();
     startTimer();
 };
